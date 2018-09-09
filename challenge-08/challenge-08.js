@@ -68,6 +68,8 @@ function calculator(operator) {
       break;
       case '/': result = x / y;
       break;
+      case '%': result = x % y;
+      break;
       default:
         return 'Operação inválida.';
     }
@@ -97,6 +99,7 @@ let subtraction = calculator('-');
 let multiplication = calculator('*');
 let division = calculator('/');
 let mod = calculator('%');
+let doesntexist = calculator('#');
 
 /*
 Faça uma operação com cada uma das funções criadas acima, mostrando o resultado
@@ -105,4 +108,5 @@ no console.
 subtraction(10, 2); //"Resultado da operação 10 - 2 = 8."
 multiplication(2, 4); //"Resultado da operação 2 * 4 = 8."
 division(100, 4); //"Resultado da operação 100 / 4 = 25."
-mod(20, 5); //"Operação inválida."
+mod(20, 5); //"Resultado da operação 20 % 5 = 0."
+doesntexist(150, 38); //"Operação inválida."
