@@ -70,7 +70,7 @@
   */
   function calculator(x, y) {
     return function(callback) {
-      callback(x, y);
+      return callback(x, y);
     }
   }
 
@@ -89,7 +89,10 @@
   uma função anônima que irá retornar a soma dos dois números que essa função
   anônima tem como seus argumentos.
   */
-  // console.log( 'O resultado da soma é:' sum( function() {return x + y}));
+   console.log( 'O resultado da soma do CALLBACK é:', sum(function(x, y) {
+     return x + y;
+   })
+   );
   // ?
 
   /*
@@ -97,7 +100,15 @@
   `division` e `mod`, e atribua à elas `calculator`, passando números
   diferentes para cada chamada.
   */
-  // ?
+
+  var x = 10;
+  var y = 2;
+  
+  var subtraction    = calculator(x, y);
+  var multiplication = calculator(x, y);
+  var division       = calculator(x, y);
+  var mod            = calculator(x, y);
+
 
   /*
   Mostre as variáveis acima no `console` (uma chamada de console por variável),
@@ -106,15 +117,26 @@
   As suas respostas devem estar abaixo dos `console.log` referentes à cada
   chamada.
   */
-  console.log( 'O resultado da subtração é:' );
-  // ?
+  console.log( `O resultado da subtração de ${x} - ${y} é:`,subtraction(function(x, y) {
+      return x - y;
+    })
+  );
+  // resultado da subtração é: 8
 
-  console.log( 'O resultado da multiplicação é:' );
-  // ?
+  console.log( `O resultado da multiplicação ${x} por ${y} é:`, multiplication(function(x, y) {
+      return x * y;
+    })
+  );
+  // O resultado da multiplicação é: 20
 
-  console.log( 'O resultado da divisão é:' );
-  // ?
+  console.log( `O resultado da divisão ${x} por ${y} é:`, division(function(x, y) {
+      return x / y;
+    })
+  );
+  // O resultado da divisão é: 5
 
-  console.log( 'O resto da divisão é:' );
+  console.log( `O resto da divisão de ${x} por ${y} é:`, mod(function(x, y) {
+    return x % y;
+  }) );
   // ?
 })();
