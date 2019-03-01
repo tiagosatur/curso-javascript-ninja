@@ -134,7 +134,7 @@
     variável chamada "sum", que receba a função "calculator", passando por
     parâmetro a variável que recebeu o sinal da operação.
     */
-    operationSignal = 'x';
+    operationSignal = '+';
     let sum = calculator(operationSignal);
 
     /*
@@ -164,12 +164,59 @@
     divisão e resto. Crie variáveis com os nomes "subtraction",
     "multiplication", "division" e "mod".
     */
-    // ?
+    
+   operationSignal = '-';
+   let subtraction = calculator(operationSignal);
+   if(subtraction) {
+       number1 = 83;
+       number2 = 6;
+       console.log(showOperationMessage(operationSignal, number1, number2), subtraction(number1, number2));
+   } else {
+       console.log(shoErrorMessage(operationSignal))
+   }
+
+    operationSignal = '*';
+    let multiplication = calculator(operationSignal);
+    if(multiplication) {
+        number1 = 30;
+        number2 = 6;
+        console.log(showOperationMessage(operationSignal, number1, number2), multiplication(number1, number2));
+    } else {
+        console.log(shoErrorMessage(operationSignal))
+    }
+
+    operationSignal = '/';
+    let division = calculator(operationSignal);
+    if(division) {
+        number1 = 500;
+        number2 = 37;
+        console.log(showOperationMessage(operationSignal, number1, number2), division(number1, number2));
+    } else {
+        console.log(showErrorMessage(operationSignal));
+    }
+
+    operationSignal = '%';
+    let mod = calculator(operationSignal);
+    if(mod) {
+        number1 = 17;
+        number2 = 6;
+        console.log(showOperationMessage(operationSignal, number1, number2), mod(number1, number2));
+    } else {
+        console.log(showErrorMessage(operationSignal));
+    }
 
     /*
     Repita o PASSO 2 novamente, mas passando um operador inválido, para ver se
     a mensagem de erro será mostrada no console.
     */
-    // ?
+   operationSignal = '$';
+   let invalid = calculator(operationSignal);
+   if(invalid) {
+       number1 = 17;
+       number2 = 6;
+       console.log(showOperationMessage(operationSignal, number1, number2), invalid(number1, number2));
+   } else {
+       console.log(showErrorMessage(operationSignal));
+   }
 
 })();
