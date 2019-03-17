@@ -8,7 +8,7 @@
     'Entrou ao menos uma vez!'
     Qual loop você deve usar para que essa mensagem seja mostrada no console?
     */
-    const once = false;
+    var once = false;
 
     while(once === true) {
         console.log('Entrou ao menos uma vez!');
@@ -35,9 +35,18 @@
     Após o loop, mostre a frase:
     'The person has [COUNTER] properties'
     */
-    for(const [prop, value] of Object.entries(person)) {
-        console.log(`The ${prop} of person is ${value}`)
+
+    var counter = 0;
+    // for (const [prop, value] of Object.entries(person)) {
+    //     counter++;
+    //     console.log(`The ${prop} of person is ${value}`);
+    // }
+    for (const prop in person) {
+        counter++;
+        console.log(`The ${prop} of person is ${person[prop]}`);
     }
+
+    console.log(`The person object has ${counter} properties`);
 
     /*
     Crie uma função chamada `moreThan`, que vai verificar se a pessoa (objeto
@@ -46,9 +55,18 @@
     Após a função, mostrar a mensagem no console:
     'The person has more than 25 years old? [TRUE/FALSE]'
     */
+    
     function moreThan(age) {
-        
+
+        return person.age > age;
+        // if(person.age > age) {
+        //     return true;
+        // }
+
+        // return false;
     }
+
+    console.log(`The person has more than 25 years old? ${moreThan(30)}`);
 
     /*
     Faça um loop de 0 a 20, que adicione cada número como um item de um
@@ -56,7 +74,17 @@
     Mostre no console os números no array.
     */
     console.log( 'De 0 a 10:' );
-    // ?
+    var numbers = [];
+
+    for(var i = 0; i <= 20; i++) {
+        if(i > 10) {
+            break;
+        }
+
+        numbers[i] = i;
+    }
+
+    console.log('O array numbers possui é igual a: ', numbers);
 
     /*
     Faça outro loop de 0 a 20, que adicione a um array chamado `numbers` (já
@@ -65,5 +93,17 @@
     Mostrar no console os números do array.
     */
     console.log( 'Pares de 0 a 20:' );
-    // ?
+    var numbers = [];
+
+    for(var i = 0; i < 20; i++) {
+        if(i % 2 != 0) {
+            continue;
+        }
+        numbers.push(i);
+    }
+
+    console.log('Os números pares do array numbers são: ', numbers);
+
+
+gstgstgstlkjhglkhgkhrsasdfasdfadsfadsds    // ?
 })();
