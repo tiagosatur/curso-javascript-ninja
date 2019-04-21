@@ -1,4 +1,24 @@
 (function(){
+    function factorial(n) {
+        // Calculate the factorial here
+        if(n === 0 || n === 1) {
+          return 1;
+        }
+        
+        if (n >= 12 || n < 0) {
+            return RangeError('Number must be less than 12 and greater then 0') 
+        }
+        
+         let resp = n;
+              
+          while(n>2) {
+              resp *= --n;
+          }
+      
+          return resp;
+      }
+    
+    console.log('Fatorial -- ', factorial(-1));
     /*
     Envolva todo o conteúdo desse arquivo em uma IIFE.
     */
